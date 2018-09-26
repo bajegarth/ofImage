@@ -1,5 +1,7 @@
 #include "ofApp.h"
 #include <fstream>
+#include <iostream>
+using namespace std;
 
 
 void ofApp::setup(){
@@ -11,11 +13,13 @@ void ofApp::setup(){
      x = abs(img.getWidth() - ofGetWidth())/2;
      y = abs(img.getHeight() - ofGetHeight())/2;
 
-     /*
-       (A)
+     
+       //(A)
 
        n =  3 * img.getWidth() * img.getHeight();
-     */
+     
+     
+     cout <<endl<< "Hello from setup!!!"<<endl;
 }
 
 
@@ -32,16 +36,16 @@ img.draw(x,y);
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+cout << "'a' key has been pressed"<<endl;
     if (key == 'i') 
           { 
- 
-             /*  
-                (B)
+           cout <<"'i' key has been press"<<endl;
+               
+                //(B)
 
                 for(int i = 0 ;i < n; i++)
                  img.setColor(i, img.getColor(i).invert());
-             */ 
+             
            img.update();
            }//end if
 }
